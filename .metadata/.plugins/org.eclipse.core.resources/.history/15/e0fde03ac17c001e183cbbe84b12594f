@@ -1,0 +1,5 @@
+package com.security.app.repository;
+
+public interface UserRepository {
+
+}

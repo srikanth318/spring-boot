@@ -1,0 +1,17 @@
+package com.example.demo.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.stereotype.Repository;
+
+import com.example.demo.entity.Student;
+
+@Repository
+
+public interface StudentRepo extends JpaRepository<Student,Long> {
+
+	@Query("from student where name=:name")
+	Student findByName(String name);
+
+}

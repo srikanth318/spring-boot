@@ -1,0 +1,16 @@
+package com.demointerview;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Configuration;
+
+@SpringBootApplication(exclude = EnableAutoConfiguration.class)
+@Configuration
+public class DemoInterviewApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(DemoInterviewApplication.class, args);
+	}
+
+}

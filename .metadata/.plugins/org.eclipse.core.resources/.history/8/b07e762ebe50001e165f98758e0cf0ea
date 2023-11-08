@@ -1,0 +1,60 @@
+package com.example.demo.controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.entity.student;
+import com.example.demo.repo.StudentRepo;
+
+@RestController
+public class studentcontroller {
+
+	@Autowired
+	StudentRepo studentRepo;
+
+	@GetMapping("/get")
+	public String getData() {
+		return "i return a string method";
+	}
+
+	@PostMapping("/api/students")
+	public ResponseEntity<student> saveStudent(@RequestBody student student) {
+
+		student save = studentRepo.save(student);
+
+		return new ResponseEntity<>(save, HttpStatus.CREATED);
+
+	}
+
+	@GetMapping("/api/")
+	public ResponseEntity<student> getAllData() {
+		List<student> findAll = studentRepo.findAll();
+		return new ResponseEntity(findAll, HttpStatus.OK);
+	}
+
+	@PutMapping("/api/students/{id}")
+	public ResponseEntity<student> updateStudent(@PathVariable String id, @RequestBody student stud) {
+		
+		student student= studentRepo.getDataByName(id);
+		
+		if (student!=null) {
+			student.setStudentName(stud.getStudentName());
+			student.setStudentEmail(stud.getStudentEmail());
+			student.setStudentAddress(stud.getStudentAddress());
+			return new ResponseEntity<>(studentRepo.save(student), HttpStatus.OK);
+		}
+
+		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+	}
+
+}
