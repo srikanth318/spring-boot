@@ -1,0 +1,24 @@
+package com.test;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		String[] a = {"Rahul", "Utkarsh","Shubham", "Neelam","Rahul","Utkarsh"};
+
+
+		Set<String>  set = new HashSet<>();
+
+		for(String str : a)
+		{
+		set.add(str);
+		}
+		
+		System.out.println(set);
+ 
+	}
+
+}

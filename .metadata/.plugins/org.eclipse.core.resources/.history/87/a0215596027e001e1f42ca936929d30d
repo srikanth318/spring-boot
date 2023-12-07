@@ -1,0 +1,15 @@
+package com.app.college.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.Data;
+
+@Entity
+@Table(name = "college")
+@Data
+public class College {
+
+	private int id;
+	private String collgeName;
+	private String collegeLocation;
+}

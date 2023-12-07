@@ -1,0 +1,5 @@
+package com.security.app.services;
+
+public class JWTService {
+
+}

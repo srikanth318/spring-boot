@@ -1,0 +1,15 @@
+# ===============================
+# = DATA SOURCE
+# ===============================
+# Set here configurations for the database connection
+spring.datasource.url=jdbc:h2:mem:testdb;MODE=MySQL;DATABASE_TO_LOWER=TRUE;CASE_INSENSITIVE_IDENTIFIERS=TRUE;IGNORECASE=TRUE
+spring.datasource.username=cloud
+spring.datasource.password=scape
+spring.jpa.hibernate.ddl-auto=none
+spring.jpa.show-sql=false
+
+# ===============================
+# = H2 database
+# ===============================
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2-console

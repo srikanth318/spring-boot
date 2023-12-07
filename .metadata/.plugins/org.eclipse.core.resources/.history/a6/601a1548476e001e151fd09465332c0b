@@ -1,0 +1,43 @@
+package com.demointerview.dto;
+
+import com.demointerview.pojo.MovieDetails;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
+import java.util.List;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Data
+public class DirectorDetails implements Serializable {
+
+    private static final long serialVersionUID = 634961036400971080L;
+    private String name;
+    private List<MovieDetails> movieDets;
+    
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public List<MovieDetails> getMovieDets() {
+		return movieDets;
+	}
+	public void setMovieDets(List<MovieDetails> movieDets) {
+		this.movieDets = movieDets;
+	}
+	public DirectorDetails(String name, List<MovieDetails> movieDets) {
+		super();
+		this.name = name;
+		this.movieDets = movieDets;
+	}
+	
+	
+    
+    
+}

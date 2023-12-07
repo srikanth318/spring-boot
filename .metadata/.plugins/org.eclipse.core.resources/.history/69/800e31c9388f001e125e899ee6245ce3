@@ -1,0 +1,12 @@
+package com.test;
+
+public class Test {
+
+	public static void main(String[] args) {
+
+		
+		// list.stream().filter(e->e.getAge()>28).collect(Collectors.groupingBy(Employee::getDept(),Collectors.toList()))
+		
+	}
+
+}

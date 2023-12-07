@@ -1,0 +1,62 @@
+package com.app.configuration;
+
+import javax.sql.DataSource;
+
+
+import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.LocalEntityManagerFactoryBean;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+import com.app.college.entity.College;
+import com.zaxxer.hikari.HikariDataSource;
+
+@Configuration
+@EnableTransactionManagement
+@EnableJpaRepositories(basePackages = "com.app.college.repository")
+public class CollegeDataSourceConfiguration {
+	
+	
+	@Bean
+	@Primary
+	@ConfigurationProperties("spring.datasource.college")
+	public DataSourceProperties collegeDataSourceProperties() {
+		
+		return new DataSourceProperties();
+	}
+	
+	@Bean
+	@Primary
+	@ConfigurationProperties("spring.datasource.college.configuration")
+	public DataSource collDataSource() {
+		
+		return collegeDataSourceProperties()
+				.initializeDataSourceBuilder()
+				.type(HikariDataSource.class)
+				.build();
+	}
+	
+	
+	@Bean(name="colleEntityManagerFactory")
+	public LocalContainerEntityManagerFactoryBean collegeEntityManagerFactoryBean(EntityManagerFactoryBuilder builder) {
+		
+		return builder
+				.dataSource(collDataSource())
+				.packages(College.class)
+				.build();
+	}
+	
+	
+	
+	
+	
+	
+	
+
+}

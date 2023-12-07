@@ -1,0 +1,36 @@
+package com.app;
+
+import static org.mockito.Mockito.when;
+
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.app.entity.User;
+import com.app.repo.UserRepo;
+import com.app.service.UserService;
+
+@SpringBootTest(classes = UserServiceMockitoTest.class)
+public class UserServiceMockitoTest {
+
+	@Mock
+	UserRepo userRepo;
+	
+	@InjectMocks
+	UserService userService;
+	
+	public List<User> myUserList;
+	
+	@Test
+	public void getAllUsersTest() {
+		
+		myUserList.add(new )
+		
+		when(userRepo.findAll()).thenReturn(null)
+		userService.getAllUsers();
+	}
+	
+}

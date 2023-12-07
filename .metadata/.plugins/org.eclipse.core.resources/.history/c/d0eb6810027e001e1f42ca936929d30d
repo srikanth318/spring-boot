@@ -1,0 +1,5 @@
+package com.app.college.entity;
+
+public class College {
+
+}

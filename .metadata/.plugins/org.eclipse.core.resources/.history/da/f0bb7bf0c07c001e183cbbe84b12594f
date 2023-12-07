@@ -1,0 +1,21 @@
+package com.security.app.entities;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.Data;
+
+@Entity
+@Table(name="user")
+@Data
+public class User {
+
+	private Integer id;
+	
+	private String firstName;
+	private String secondName;
+	private String email;
+	private String password;
+	private Role role;
+	
+	
+}

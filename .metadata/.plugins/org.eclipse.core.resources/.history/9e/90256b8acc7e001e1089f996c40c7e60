@@ -1,0 +1,16 @@
+
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=create
+spring.jpa.properties.hibernate.format_sql=true
+
+#College DB
+spring.datasource.college.url=jdbc:mysql://localhost:3306/college
+spring.datasource.college.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.college.username=root
+spring.datasource.college.password=root
+
+#Student DB
+spring.datasource.student.url=jdbc:mysql://localhost:3306/student
+spring.datasource.student.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.student.username=root
+spring.datasource.student.password=root

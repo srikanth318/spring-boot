@@ -1,0 +1,20 @@
+package com.test;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		String[] a = {"Rahul", "Utkarsh","Shubham", "Neelam","Rahul","Utkarsh"};
+
+		Set s1=new HashSet();
+		List<String>kk=	Arrays.stream(a).filter(k->!s1.add(k)).collect(Collectors.toList());
+		System.out.println(kk);
+	}
+
+}

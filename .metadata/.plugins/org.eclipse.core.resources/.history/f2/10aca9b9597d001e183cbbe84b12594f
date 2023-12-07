@@ -1,0 +1,35 @@
+package com.test;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+public class TestMain {
+
+	@SuppressWarnings("unlikely-arg-type")
+	public static void main(String[] args) {
+
+		List<String> list1 = new ArrayList<>();
+		
+		list1.add("a");
+		list1.add("b");
+		list1.add("c");
+		list1.add("d");
+
+		ArrayList<String> list2 = new ArrayList<>();
+		
+		list2.add("a");
+		list2.add("y");
+		
+		
+		Set<String> set = new HashSet<>(list1);
+		
+		boolean retainAll = set.retainAll(list2);
+		System.out.println(retainAll);
+		
+		
+
+	}
+
+}
