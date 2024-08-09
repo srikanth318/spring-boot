@@ -19,7 +19,7 @@ public class EmployeeDeptWithCount {
 				new Employee(3, "aarthi", 25, 10000, "account"),
 				new Employee(4, "vamsi", 89, 50000, "account"));
 
-		Map<String, Long> collect = list.stream().filter(d->d.getSalary()>10000)
+		Map<String, Long> collect = list.stream().filter(d->d.getSalary()>=10000)
 				.collect(Collectors.groupingBy(Employee::getDept, Collectors.counting()));
 
 		

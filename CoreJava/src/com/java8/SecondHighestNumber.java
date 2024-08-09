@@ -8,8 +8,10 @@ public class SecondHighestNumber {
 
 	public static void main(String[] args) {
 
-		List<Integer> asList = Arrays.asList(1, 2, 4, 7, 3, 9, 33, 22);
+		List<Integer> asList = Arrays.asList(1, 2, 4, 7, 3,2, 9, 33, 22);
 
+		//33,22,9,7,4,3,2,1
+		
 		Integer integer = asList.stream()
 								.distinct()
 								.sorted(Comparator.reverseOrder())
