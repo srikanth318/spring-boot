@@ -1,0 +1,39 @@
+Git Commands
+============
+GIT Repository URL : https://github.com/srikanth318/spring-boot.git
+
+1.Initialize a new Git repository : git init
+
+2.Clone a repository: git clone <repository_url>
+
+3.Check the status of your working directory: git status
+
+4.Add changes to the staging area: git add <file1> <file2> ...
+
+5.To add all changes: git add .
+
+6.Commit changes: git commit -m "Your commit message"
+
+7.Push changes to a remote repository: git push origin <branch_name>
+
+8.Pull changes from a remote repository: git pull origin <branch_name>
+
+9.Create a new branch: git branch <branch_name>
+
+10.Switch to a different branch: git checkout <branch_name>
+
+11.Merge changes from one branch into another: git merge <branch_name>
+
+12.View the commit history: git log
+
+13.View a specific commit: git show <commit_hash>
+
+14.Discard changes in the working directory: git checkout -- <file>
+
+15.Remove untracked files: git clean -df
+
+16.Configure user information: 
+
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+

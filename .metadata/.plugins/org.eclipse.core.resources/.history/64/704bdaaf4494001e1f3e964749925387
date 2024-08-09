@@ -1,8 +1,0 @@
-package com.app;
-
-import org.springframework.boot.test.context.SpringBootTest;
-
-@SpringBootTest(classes = UserServiceMockitoTest.class)
-public class UserServiceMockitoTest {
-
-}

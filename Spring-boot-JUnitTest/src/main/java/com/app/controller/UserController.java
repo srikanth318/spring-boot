@@ -1,5 +1,6 @@
 package com.app.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,7 @@ public class UserController {
 	@GetMapping("/getAllUsers")
 	public List<User> getAllUsers() {
 	
+		
 		return userService.getAllUsers();
 	}
 	
